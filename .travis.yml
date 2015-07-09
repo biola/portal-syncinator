@@ -5,3 +5,4 @@ rvm:
 before_install:
 - sudo apt-get install libpq-dev freetds-dev
 script: bundle exec rspec
+sudo: false
