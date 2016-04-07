@@ -10,6 +10,7 @@ class TrogdirPerson
   end
 
   def legacy_biola_id
+    raise 'Something is wrong, this person does not have a Biola ID. Portal Syncinator requires a Biola ID to work.' if biola_id.nil?
     zero_pad = Settings.biola_id_length - biola_id.length
     "0"*zero_pad + biola_id
   end
