@@ -3,7 +3,7 @@ module PortalSyncinator
     env = ENV['RACK_ENV'] || ENV['RAILS_ENV'] || :development
     ENV['RACK_ENV'] ||= env.to_s
 
-    Config.load_and_set_settings('./config/settings.yml', "./config/settings.#{env}.yml", './config/settings.local.yml')
+    RailsConfig.load_and_set_settings('./config/settings.yml', "./config/settings.#{env}.yml", './config/settings.local.yml')
 
     if defined? Raven
       Raven.configure do |config|
