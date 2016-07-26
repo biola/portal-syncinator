@@ -1,15 +1,12 @@
 source 'https://rubygems.org'
 
-# Fixes this issue https://github.com/mongoid/moped/issues/345
-gem 'moped', '2.0.4', git: 'https://github.com/wandenberg/moped', branch: 'operation_timeout'
-gem 'mysql2'
-# beta1 fixes this issue https://github.com/railsconfig/rails_config/pull/86
-gem 'rails_config', '~> 0.5.0.beta1'
-gem 'rake'
-gem 'sidekiq'
-gem 'sidetiq'
-gem 'tiny_tds', :git => 'https://github.com/rails-sqlserver/tiny_tds', :branch => 'master'
-gem 'trogdir_api_client'
+gem 'mysql2', '~> 0.4.4'
+gem 'config', '~> 1.2', '>= 1.2.1'
+gem 'rake', '~> 10.4'
+gem 'sidekiq', '~> 3.3'
+gem 'sidetiq', '~> 0.6'
+gem 'tiny_tds', '~> 1.0', '>= 1.0.4'
+gem 'trogdir_api_client', '~> 0.4'
 
 group :development, :test do
   gem 'pry'
@@ -19,5 +16,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'sentry-raven'
+  gem 'sentry-raven', '~> 1.2', '>= 1.2.2'
 end
