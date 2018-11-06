@@ -1,15 +1,15 @@
 module Workers
   class HandleChanges
     include Sidekiq::Worker
-    include Sidetiq::Schedulable
+    # include Sidetiq::Schedulable
 
     class TrogdirAPIError < StandardError; end
 
     sidekiq_options retry: false
 
-    recurrence do
-      hourly.hour_of_day(*(8..20).to_a).day(:monday, :tuesday, :wednesday, :thursday, :friday)
-    end
+    # recurrence do
+      # hourly.hour_of_day(*(8..20).to_a).day(:monday, :tuesday, :wednesday, :thursday, :friday)
+    # end
 
     def perform
       response = change_syncs.start.perform
